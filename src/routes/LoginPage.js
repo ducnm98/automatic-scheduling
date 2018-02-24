@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
+import bcryptjs from 'bcryptjs';
+
+import LoginForm from '../components/Form/LoginForm'
+import Footer from "./../components/Footer";
+import Header from "./../components/Header/";
 
 class LoginPage extends Component {
+    state = {
+        username: '',
+        email: '',
+        password: ''
+    };
+
+    submit = (data) => {
+      console.log(data)
+    }
+
+
     render() {
         return (
-            <div>
-                <h1>LoginPage</h1>
-            </div>
+            <LoginForm submit={this.submit}/>
         );
     }
 }

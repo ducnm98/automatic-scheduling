@@ -1,26 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ApolloProvider } from 'react-apollo';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import ApolloClient from 'apollo-boost';
-import Routes from './routes';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { ApolloProvider } from 'react-apollo'
+import ApolloClient from 'apollo-boost'
+import Routes from './routes'
+import 'semantic-ui-css/semantic.min.css'; 
 
-// import registerServiceWorker from './registerServiceWorker';
 
-const client = new ApolloClient({ uri: 'https://localhost:3000/graphql' });
+// import registerServiceWorker from './registerServiceWorker'
 
+const client = new ApolloClient({ uri: 'https://localhost:3000/graphql' })
 
 const App = (
-    <MuiThemeProvider>
-        <ApolloProvider client={client} >
-            <Routes />
-        </ApolloProvider>    
-    </MuiThemeProvider>
-    
-);
-  
+    <ApolloProvider client={client}>
+        <div class="ui container">
+         <Routes />
+        </div>
+    </ApolloProvider>
 
+)
 
-
-ReactDOM.render(App, document.getElementById('root'));
-// registerServiceWorker();
+ReactDOM.render(App, document.getElementById('root'))
+// registerServiceWorker()
